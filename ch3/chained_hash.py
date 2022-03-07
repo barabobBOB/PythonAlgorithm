@@ -16,13 +16,13 @@ class ChainedHash:
 
     def __init__(self, capacity: int):
         self.capacity = capacity            #해시 테이블의 크기 지정
-        self.table = [None] * self.capcity  #해시 테이블(리스트)을 선언
+        self.table = [None] * self.capacity  #해시 테이블(리스트)을 선언
 
     def hash_value(self, key: Any):
         #해시 값구함
         if isinstance(key, int):
-            return key % self.capcity
-        return (int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capcity)
+            return key % self.capacity
+        return (int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity)
 
     def search(self, key: Any) -> Any:
         # 키가 key인 원소를 검색하여 값을 반환
