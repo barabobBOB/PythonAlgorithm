@@ -23,6 +23,7 @@ class FixedStack:
 
     def is_full(self)-> bool:
         return self.ptr >= self.capacity
+
     def push(self, value: Any) -> None:
         if self.is_full():
             raise FixedStack.Full   # 예외 처리 발생
